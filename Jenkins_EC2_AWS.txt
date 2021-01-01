@@ -1,0 +1,38 @@
+Steps :
+
+Launch amazon Linux and in configure security group choose ssh and one more rule with Custom TCP Rule, PortNo :8080
+
+---  copy ssh link to bash and establish the connection
+
+--- sudo su -
+
+--- yum install java -y
+
+--- go to https://pkg.jenkins.io on google
+                select redhat-stable
+--- sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+--- sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+--- yum install jenkins
+
+--- systemctl start jenkins
+
+--- systemctl enable jenkins
+
+--- systemctl status jenkins
+
+--- Once Jenkins shows up and running state , Then copy Jenkins Instance public IP address 
+
+--- Open a new tab and paste the address for ex
+
+--- 172.31.50.227:8080 and press enter
+
+--- Unlock jenkins copy the address or path /var/lib/jenkins/secretsinitialAdminPassword
+
+--- on the bash :   cat path /var/lib/jenkins/secretsinitialAdminPassword and press enter
+
+--- copy the Administrator password and paste it on the Jenkins.
+
+--- Fill the details and you Jenkins are ready to Start.
+
