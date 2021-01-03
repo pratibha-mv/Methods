@@ -1,0 +1,9 @@
+---
+- name: Rsync some files
+  hosts: webservers
+
+  tasks:
+    - name: copy my file
+      synchronize:
+        src: /etc/ansible/Test
+        dest: /root/.ssh
