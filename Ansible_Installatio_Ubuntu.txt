@@ -1,0 +1,46 @@
+
+Installing Ansible on Ubuntu
+=============================
+
+Step 1 — Installing Ansible
+
+First, refresh your system’s package index with:
+
+$   sudo apt update
+
+
+
+$   sudo apt install ansible
+
+
+
+Step 2 — Setting Up the Inventory File
+
+The inventory file contains information about the hosts you’ll manage with Ansible.
+
+$   sudo nano /etc/ansible/hosts           --------------- you can also use Vi editor
+
+
+Whenever you want to check your inventory, you can run:
+
+$   ansible-inventory --list -y
+
+
+Step 3 — Testing Connection
+
+After setting up the inventory file to include your servers, it’s time to check if Ansible is able to connect to these servers and run commands via SSH.
+
+You can use the -u argument to specify the remote system user. When not provided, Ansible will try to connect as your current system user on the control node.
+
+From your local machine or Ansible control node, run:
+
+
+
+$   ansible all -m ping -u root
+
+This command will use Ansible’s built-in ping module to run a connectivity test on all nodes from your default inventory, connecting as root. The ping module will test:
+
+if hosts are accessible;
+if you have valid SSH credentials;
+if hosts are able to run Ansible modules using Python.
+
