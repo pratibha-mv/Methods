@@ -1,0 +1,61 @@
+Master Server
+==============
+
+sudo su -
+
+apt-get install software-properties-common
+ apt-add-repository ppa:ansible/ansible
+ apt-get update
+ apt-get install ansible
+
+ssh-keygen -t rsa
+
+cd .ssh
+
+cat id_rsa.pub
+
+copy this public key and go to slave node and paste it in authorized_keys file in slave node.
+
+Go to slave server/node
+-------------------------
+
+sudo su -
+
+cd .ssh
+
+go to authorized keys and paste the public key from master server using vi command
+
+vi authorized_keys
+
+go to master server
+--------------------
+
+ssh private_id_slaveserver
+
+cd /etc/ansible
+
+vi hosts
+
+copy slave private-id or private-ip address in to the prefered group : here it is webserevers
+
+:wq
+
+ansible -m ping webservers
+
+ping-pong 
+connection successful
+
+now in master server write some ansible playbooks (Ex : installation of apache/installation of java/other yml scripts)
+
+vi apache.yml
+
+ansible-playbook apache.yml
+
+to check whether apache2 is installed in slave node type
+
+systemctl status apache2 
+
+ 
+
+
+
