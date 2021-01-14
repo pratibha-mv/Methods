@@ -9,7 +9,6 @@ First, refresh your system’s package index with:
 $   sudo apt update
 
 
-
 $   sudo apt install ansible
 
 
