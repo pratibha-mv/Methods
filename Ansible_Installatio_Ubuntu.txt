@@ -1,6 +1,6 @@
 
 Installing Ansible on Ubuntu
-=============================
+============================
 
 Step 1 — Installing Ansible
 
